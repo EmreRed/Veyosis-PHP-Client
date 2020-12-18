@@ -1,0 +1,7 @@
+{
+    "name": "Veyosis",
+    "return": "Veyosis",
+    "autoload": [
+        "src/Veyosis.php"
+        ],
+}
