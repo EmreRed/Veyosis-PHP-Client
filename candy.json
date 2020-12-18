@@ -3,5 +3,5 @@
     "return": "Veyosis",
     "autoload": [
         "src/Veyosis.php"
-        ],
+        ]
 }
