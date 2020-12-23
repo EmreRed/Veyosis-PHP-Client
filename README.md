@@ -80,22 +80,12 @@ Veyosis::report()->single($brand,$type,$recipientType,$recipient);
 
 #### Çoklu İzin Sorgulama (Asenkron)
 ```php
-Veyosis::consent()->async($brand,$recipients);
+Veyosis::consent()->async($brand,$type,$recipientType,$recipients);
 ```
 `$brand`: İzin eklemek istediğiniz marka kodu *  
-`$recipients`:
-```php
-[
-  [
-    'type' => '',
-    'recipientType' => '',
-    'recipient' => ''
-  ],
-  .
-  .
-  .
-]
-```
+`$type`: İzin Tipi (ARAMA/MESAJ/EPOSTA) *  
+`$recipientType`: Alıcı Tipi (BIREYSEL/TACIR) *  
+`$recipient`: Alıcılar (Array şeklinde) *  
 
 ---
 
