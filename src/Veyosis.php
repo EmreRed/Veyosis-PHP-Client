@@ -50,7 +50,7 @@ class Veyosis {
           'recipient' => $recipient,
           'type' => $type,
           'recipientType' => $recipientType]); }
-      function async($brand,$recipients){ return Veyosis::call("report/async/$brand",$recipients); }
+      function async($brand,$type,$recipientType,$recipients){ return Veyosis::call("report/async/$brand",['type' => $type, 'recipientType' => $recipientType, 'recipients' => $recipients]); }
       function status($transaction){ return Veyosis::call("report/status/$transaction"); }
     };
   }
@@ -84,7 +84,7 @@ class Veyosis {
     self::$_arr[self::ERROR] = isset($result->errors) ? $result->errors[0]->code : false;
     self::$_arr[self::ERROR_MSG] = isset($result->errors) ? $result->errors[0]->message : false;
     $result_success = [200,202,204];
-    return in_array(self::$_arr[self::RESULT_CODE],$result_success) ? $result : false;
+    return in_array(self::$_arr[self::RESULT_CODE],$result_success) ? $result->data : false;
   }
 
   public static function get($v=null){
